@@ -1,12 +1,16 @@
 # Qidi_Q1_Pro_-_PPAC_Study
-Mes notes sur le firmware de la Q1 Pro du constructeur Qidi Tech
 
+Mes notes sur le firmware de la Q1 Pro du constructeur Qidi Tech.
 
 En vrac pour l'instant.
 
-## Une bonne pratique et de toujours changer le mot de passe par defaut
+## Une bonne pratique et de toujours changer le/les mot de passe par defaut pour éviter de faciliter un piratage.
 
-Ici il y a deux utilisateurs. L'utilisateur `root` et l'utilisateur `mks` donc pour éviter de faciliter un piratage
+Ici il y a deux utilisateurs. 
+
+L'utilisateur `root` et l'utilisateur `mks` ayant par defaut tout les deux le mot de passe `makerbase`.
+
+Donc je vous invite a faire pour remplacer ses mots de passes :
 
 ~~~
 passwd root
