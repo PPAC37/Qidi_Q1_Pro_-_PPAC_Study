@@ -20,7 +20,7 @@ passwd root
 passwd mks
 ~~~
 
-Et de noter précieusement les nouveaux mot de passe.
+Et de noter précieusement (par exemple sur votre manuel papier) les nouveaux mot de passe.
 
 ---
 
