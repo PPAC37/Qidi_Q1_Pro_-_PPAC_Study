@@ -10,7 +10,7 @@ Ici il y a deux utilisateurs.
 
 L'utilisateur `root` et l'utilisateur `mks` ayant par defaut tout les deux le mot de passe `makerbase`.
 
-Donc je vous invite a faire pour remplacer les mots de passes par défaut :
+Donc je vous invite une fois connecté en `ssh` en temps qu'utilisateur `root` a l'imprimante, de faire, pour remplacer les mots de passes par défaut :
 
 ~~~
 passwd root
