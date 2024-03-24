@@ -3,10 +3,11 @@ Firmware v4.4.13
 
 --- 
 
-altéré 
+Altération déja éffectuées
 
 https://github.com/fran6p/Qidi_X-Max3/blob/main/OS/date-heures-synchronisees.md#alternative2
 
+<summary>(Cliquez pour déplier!)</summary>
 # ALTERNATIVE2
 
 ## PRÉALABLE
@@ -50,7 +51,7 @@ System clock synchronized: yes
 ```
 
 :smiley:
-
+</details>
 
 ~~~
 sudo apt remove ntp chrony
