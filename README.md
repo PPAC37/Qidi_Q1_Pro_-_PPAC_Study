@@ -22,6 +22,8 @@ passwd mks
 
 Et de noter précieusement (par exemple sur votre manuel papier) les nouveaux mot de passe.
 
+// Y aurais aussi a voir pour mettre un mot de passe pour l'interface fluidd et moonraker ! (Mais je ne sais pas pour l'instant si c'est posible ni comment on fait cela.)
+
 ---
 
 
