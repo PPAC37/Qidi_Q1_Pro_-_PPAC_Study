@@ -7,7 +7,8 @@ Altération déja éffectuées
 
 https://github.com/fran6p/Qidi_X-Max3/blob/main/OS/date-heures-synchronisees.md#alternative2
 
-<summary>(Cliquez pour déplier!)</summary>
+<details>
+  <summary>(Cliquez pour déplier!)</summary>
 # ALTERNATIVE2
 
 ## PRÉALABLE
