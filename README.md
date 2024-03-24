@@ -1,7 +1,23 @@
 # Qidi_Q1_Pro_-_PPAC_Study
-Mes notes sur le firmware de la Q1 Pro du constructeur Qidi Tech 
+Mes notes sur le firmware de la Q1 Pro du constructeur Qidi Tech
+
 
 En vrac pour l'instant.
+
+## Une bonne pratique et de toujours changer le mot de passe par defaut
+
+Ici il y a deux utilisateurs. L'utilisateur `root` et l'utilisateur `mks` donc pour éviter de faciliter un piratage
+
+~~~
+passwd root
+~~~
+
+~~~
+passwd mks
+~~~
+
+---
+
 
 - Mon sujet de découverte sur le forum de https://www.lesimprimantes3d.fr/
   - https://www.lesimprimantes3d.fr/forum/topic/57668-qidi-tech-q1-pro-le-sujet-de-d%C3%A9couverte/
