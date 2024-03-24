@@ -4,13 +4,13 @@ Mes notes sur le firmware de la Q1 Pro du constructeur Qidi Tech.
 
 En vrac pour l'instant.
 
-## Une bonne pratique et de toujours changer le/les mot de passe par defaut pour éviter de faciliter un piratage.
+## Une bonne pratique et de toujours changer le/les mot de passe par defaut pour éviter de faciliter un piratage ou une infection.
 
 Ici il y a deux utilisateurs. 
 
 L'utilisateur `root` et l'utilisateur `mks` ayant par defaut tout les deux le mot de passe `makerbase`.
 
-Donc je vous invite a faire pour remplacer ses mots de passes :
+Donc je vous invite a faire pour remplacer les mots de passes par défaut :
 
 ~~~
 passwd root
