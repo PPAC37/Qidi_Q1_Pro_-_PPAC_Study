@@ -1,9 +1,290 @@
 
 Firmware v4.4.13
 
---- 
+---
 
-Altération déja éffectuées
+~~~
+ssh 10.42.0.45 -l root
+~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
+<pre>
+q6@q6-pc:~$ ssh 10.42.0.45 -l root
+root@10.42.0.45's password: 
+┌─────────────────────────────────────────────┐
+│  ___  ___ ____ ___   _____ _____ ____ _   _ │
+│ / _ \|_ _|  _ \_ _| |_   _| ____/ ___| | | |│
+│| | | || || | | | |    | | |  _|| |   | |_| |│
+│| |_| || || |_| | |    | | | |__| |___|  _  |│
+│ \__\_\___|____/___|   |_| |_____\____|_| |_|│
+│                                             │
+└─────────────────────────────────────────────┘
++-------------------------------------------------------------------------------+
+| Warning: Modifying system files and installing unofficial plugins means that  |
+| the customer is waiving their expectations of official support. They will be  |
+| solely responsible for the security and safety of their printer. Any firmware |
+| issues arising from these modifications will not be covered under warranty.   |
++-------------------------------------------------------------------------------+
+
+Welcome to Armbian 22.05.0-trunk  with bleeding edge Linux 5.16.20-rockchip64
+
+No end-user support: built from trunk
+
+System load:   14%           	Up time:       55 min	
+Memory usage:  19% of 976M   	IP:	       10.42.0.45
+CPU temp:      45°C           	Usage of /:    20% of 29G    	
+
+[ 0 security updates available, 235 updates total: apt upgrade ]
+Last check: 2023-10-29 01:18
+
+[ General system configuration (beta): armbian-config ]
+
+Last login: Sun Mar 10 05:47:27 2024 from 10.42.0.1
+root@mkspi:~# 
+
+</pre>
+</details>
+
+---
+
+~~~
+fdisk -l
+~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
+<pre>
+root@mkspi:~# fdisk -l
+Disk /dev/mmcblk1: 28.9 GiB, 31037849600 bytes, 60620800 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x6a783df4
+
+Device         Boot  Start      End  Sectors  Size Id Type
+/dev/mmcblk1p1       32768   557055   524288  256M  e W95 FAT16 (LBA)
+/dev/mmcblk1p2      557056 59998207 59441152 28.4G 83 Linux
+
+
+Disk /dev/zram0: 488.2 MiB, 511893504 bytes, 124974 sectors
+Units: sectors of 1 * 4096 = 4096 bytes
+Sector size (logical/physical): 4096 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+
+
+Disk /dev/zram1: 50 MiB, 52428800 bytes, 12800 sectors
+Units: sectors of 1 * 4096 = 4096 bytes
+Sector size (logical/physical): 4096 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+root@mkspi:~# 
+</pre>
+</details>
+
+---
+
+~~~
+ls -la /root
+~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
+<pre>
+root@mkspi:~# ls -la
+total 13320
+drwx------ 11 root root     4096 Mar 10 06:27 .
+drwxr-xr-x 19 root root     4096 Oct 28 21:18 ..
+-rwxr-xr-x  1 root root     4521 Jan 12 10:14 10-armbian-header
+-rw-r--r--  1 root root    41178 Sep 19 15:13 40-usb_modeswitch.rules
+-rw-r--r--  1 root root 13279128 Oct 28 21:18 800_480.tft.bak
+-rw-r--r--  1 root root    13916 May 28  2023 Adaptive_Mesh.cfg
+-rw-------  1 root root     5964 Mar 10 06:27 .bash_history
+-rw-r--r--  1 root root     3523 Jul 25  2022 .bashrc
+drwx------  3 root root     4096 Sep 26 17:47 .cache
+drwx------  7 root root     4096 Dec 10  2022 .config
+-rw-r--r--  1 root root      195 Oct 28 21:18 config.mksini
+-rw-r--r--  1 root root       58 Dec 10  2022 .gitconfig
+drwx------  3 root root     4096 Jul 25  2022 .gnupg
+-rwxr-xr-x  1 root root    44264 May 28  2023 hid-flash
+-rw-r--r--  1 root root    26540 Dec 10  2022 klipper.bin
+drwxr-xr-x  3 root root     4096 Jul 26  2022 .local
+-rw-r--r--  1 root root      204 May 28  2023 merge.awk
+-rwxr-xr-x  1 root root     2643 May 28  2023 merge.py
+-rwxr-xr-x  1 root root      441 May 28  2023 new_config.ini
+drwxr-xr-x  3 root root     4096 Jul 25  2022 .oh-my-zsh
+-rwxr-xr-x  1 root root      195 Oct 28 21:18 old_config.ini
+-rw-r--r--  1 root root      667 Sep 19 17:29 run.txt
+drwxr-xr-x  6 root root     4096 Dec 10  2022 STM32_HID_Bootloader
+-rw-r--r--  1 root root     2439 May 28  2023 sysctl.conf
+drwxr-xr-x  3 root root     4096 Oct 11 16:50 tenda
+-rwxr-xr-x  1 root root     2149 Sep 27 14:06 timeup.sh
+-rwxr-xr-x  1 root root    35000 May 28  2023 uart
+-rwxrwxrwx  1 root root    35000 Feb 15  2019 uart-230400
+-rwxrwxrwx  1 root root    20272 May 28  2023 udp_server
+-rw-------  1 root root    10842 Oct 16 16:25 .viminfo
+-rw-r--r--  1 root root      215 Jul 25  2022 .wget-hsts
+-rw-------  1 root root      210 Dec 10  2022 .wpa_cli_history
+drwxr-xr-x  2 root root     4096 Oct 28 21:18 www
+-rw-------  1 root root      153 Oct 16 16:40 .Xauthority
+drwxrwxrwx  3 root root     4096 Oct 28 21:18 xindi
+-rw-r--r--  1 root root     3979 Jul 25  2022 .zshrc
+root@mkspi:~# 
+</pre>
+</details>
+
+---
+
+// connecté en utilisateur mks
+
+~~~
+ls -la /home/mks
+~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
+<pre>
+mks@mkspi:~$ ls -la
+total 240
+drwxr-xr-x 35 mks  mks   4096 Mar 10 06:30 .
+drwxr-xr-x  3 root root  4096 Jul 25  2022 ..
+-rw-------  1 mks  mks   1516 Mar 10 06:35 .bash_history
+-rw-r--r--  1 mks  mks    220 Jul 25  2022 .bash_logout
+-rw-r--r--  1 mks  mks   3601 Jul 25  2022 .bashrc
+drwxr-xr-x  7 mks  mks   4096 Jul 26  2022 .cache
+drwxrwxr-x  3 mks  mks   4096 Jul 25  2022 .cinnamon
+drwxr-xr-x 10 mks  mks   4096 Dec 10  2022 .config
+drwx------  3 mks  mks   4096 Jul 25  2022 .dbus
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Desktop
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Documents
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Downloads
+drwxr-xr-x  6 mks  mks   4096 Oct 16 16:03 fluidd
+drwxr-xr-x  4 mks  mks   4096 Oct 29 00:51 gcode_files
+-rwxr-xr-x  1 root root  2493 May 27  2023 gene4.py
+-rwxr-xr-x  1 root root   738 Jan  2 15:31 gene5.py
+drwx------  3 mks  mks   4096 Jul 25  2022 .gnupg
+drwx------  2 mks  mks   4096 Jul 25  2022 .gvfs
+-rw-------  1 mks  mks    314 Jul 25  2022 .ICEauthority
+drwxr-xr-x  7 mks  mks   4096 Jul 25  2022 kiauh
+drwxr-xr-x  4 mks  mks   4096 Jul 25  2022 kiauh-backups
+-rw-r--r--  1 mks  mks    589 Mar 10 06:30 .kiauh.ini
+drwxrwxr-x 12 mks  mks   4096 Oct 16 19:50 klipper
+drwxrwxr-x  2 mks  mks   4096 Oct 29 01:17 klipper_config
+drwxr-xr-x  2 mks  mks   4096 Mar 10 05:47 klipper_logs
+drwxr-xr-x  9 mks  mks   4096 Jul 25  2022 KlipperScreen
+drwxr-xr-x  6 mks  mks   4096 Jul 25  2022 .KlipperScreen-env
+drwxr-xr-x  7 mks  mks   4096 Jul 25  2022 klippy-env
+-rwxr-xr-x  1 root root 12448 May 27  2023 libColPic.so
+drwxrwxr-x  3 mks  mks   4096 Jul 25  2022 .local
+drwxr-xr-x 10 mks  mks   4096 Jul 25  2022 mjpg-streamer
+drwxrwxr-x  8 mks  mks   4096 Sep 26 15:21 moonraker
+drwxr-xr-x  2 mks  mks   4096 Oct 28 13:17 .moonraker_database
+drwxr-xr-x  6 mks  mks   4096 Jul 25  2022 moonraker-env
+drwxr-xr-x  8 mks  mks   4096 Sep 27 13:44 moonraker-timelapse
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Music
+drwxrwxr-x  3 mks  mks   4096 Jul 25  2022 .oh-my-zsh
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Pictures
+drwxrwxrwx  2 root root  4096 Oct 28 21:18 plr
+-rw-r--r--  1 mks  mks    807 Jul 25  2022 .profile
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Public
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Templates
+drwxr-xr-x  2 mks  mks   4096 Oct  5 17:10 timelapse
+-rwxr-xr-x  1 root root  6424 Oct 29 01:17 tjc
+drwxr-xr-x  2 mks  mks   4096 Jul 25  2022 Videos
+-rw-------  1 mks  mks   1052 Dec 10  2022 .viminfo
+-rw-r--r--  1 mks  mks    215 Jul 25  2022 .wget-hsts
+-rw-------  1 mks  mks    203 Oct 16 16:29 .Xauthority
+-rw-r--r--  1 mks  mks   9441 Jul 25  2022 .xfce4-session.verbose-log
+-rwxrwxr-x  1 mks  mks     20 Jul 25  2022 .xscreensaver
+-rw-------  1 mks  mks   7460 Jul 25  2022 .xsession-errors
+-rw-r--r--  1 root root    78 Jul 25  2022 .xsessionrc
+-rw-rw-r--  1 mks  mks   3979 Jul 25  2022 .zshrc
+mks@mkspi:~$ 
+</pre>
+</details>
+
+---
+
+// connecté en utilisateur mks
+
+~~~
+/home/mks/kiauh/kiauh.sh 
+~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
+<pre>
+mks@mkspi:~$ ./kiauh/kiauh.sh 
+
+/=======================================================\
+|              New KIAUH update available!              |
+|-------------------------------------------------------|
+|  View Changelog: https://git.io/JnmlX                 |
+|                                                       |
+|  It is recommended to keep KIAUH up to date. Updates  |
+|  usually contain bugfixes, important changes or new   |
+|  features. Please consider updating!                  |
+\=======================================================/
+###### Do you want to update now? (Y/n): n
+/=======================================================\
+|     ~~~~~~~~~~~~~~~~~ [ KIAUH ] ~~~~~~~~~~~~~~~~~     |
+|        Klipper Installation And Update Helper         |
+|     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     |
+\=======================================================/
+/=======================================================\
+|     ~~~~~~~~~~~~~~~ [ Main Menu ] ~~~~~~~~~~~~~~~     |
+|-------------------------------------------------------|
+|  0) [Log-Upload]   |       Klipper: Installed: 1      |
+|                    |          Repo: Klipper3d/klipper |
+|  1) [Install]      |                                  |
+|  2) [Update]       |     Moonraker: Installed: 1      |
+|  3) [Remove]       |                                  |
+|  4) [Advanced]     |      Mainsail: Not installed!    |
+|  5) [Backup]       |        Fluidd: Installed!        |
+|                    | KlipperScreen: Installed!        |
+|  6) [Settings]     |  Telegram Bot: Not installed!    |
+|                    |                                  |
+|  v4.0.0-13         |     Octoprint: Not installed!    |
+|-------------------------------------------------------|
+|                        Q) Quit                        |
+\=======================================================/
+####### Perform action: 
+
+
+/=======================================================\
+|     ~~~~~~~~~~~~~~~~~ [ KIAUH ] ~~~~~~~~~~~~~~~~~     |
+|        Klipper Installation And Update Helper         |
+|     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     |
+\=======================================================/
+/=======================================================\
+|     ~~~~~~~~~~~~~~ [ Update Menu ] ~~~~~~~~~~~~~~     |
+|-------------------------------------------------------|
+| a) [Update all]        |               |              |
+|                        | Installed:    | Latest:      |
+| Klipper & API:         |---------------|--------------|
+|  1) [Klipper]          | v0.10.0-530   | v0.12.0-117  |
+|  2) [Moonraker]        | v0.7.1-609    | v0.8.0-320   |
+|                        |               |              |
+| Klipper Webinterface:  |---------------|--------------|
+|  3) [Mainsail]         |               | v2.10.0      |
+|  4) [Fluidd]           | v1.19.0       | v1.28.1      |
+|                        |               |              |
+| Touchscreen GUI:       |---------------|--------------|
+|  5) [KlipperScreen]    | v0.2.4-17     | v0.3.9-31    |
+|                        |               |              |
+| Other:                 |---------------|--------------|
+|  6) [PrettyGCode]      |               |              |
+|  7) [Telegram Bot]     |               |              |
+|                        |------------------------------|
+|  8) [System]           |  System upgrade available!   |
+|-------------------------------------------------------|
+|                       B) « Back                       |
+\=======================================================/
+####### Perform action: 
+
+
+</pre>
+</details>
+
+---
+
+
+Altération éffectuées
 
 https://github.com/fran6p/Qidi_X-Max3/blob/main/OS/date-heures-synchronisees.md#alternative2
 
@@ -237,6 +518,8 @@ root@mkspi:~#
 ~~~
 apt list --installed
 ~~~
+<details>
+ <summary>Résultat de la commande sur ma machine (Cliquez pour déplier!)</summary>
 <pre>
 root@mkspi:~# apt list --installed
 Listing... Done
@@ -1587,15 +1870,9 @@ zsh-common/oldoldstable,oldoldstable,oldoldstable,oldoldstable,now 5.7.1-1+deb10
 zsh/oldoldstable,oldoldstable,now 5.7.1-1+deb10u1 arm64 [installed,automatic]
 root@mkspi:~# 
 </pre>
+</details>
 
 ---
-
--->
-
-
-
----
-
 
 <!-- Template 1 -->
 <!--
@@ -1613,7 +1890,6 @@ root@mkspi:~#
 
 <!-- Template 1 -->
 <!--
-
 ~~~
 
 ~~~
@@ -1622,11 +1898,10 @@ root@mkspi:~#
 </pre>
 
 ---
-
 -->
-
 <!-- Template 2 -->
 <!--
+~~~
 
 ~~~
 <details>
